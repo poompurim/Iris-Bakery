@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#78001f">
+  <meta name="description" content="Iris Bakery: salt bread, cookies, cheesecake, tiramisu, latte, dan smoothies. Susun pesananmu lalu ajukan lewat WhatsApp.">
+  <title>Iris Bakery — Manis yang dibuat dengan hati</title>
+  <link rel="icon" href="assets/images/logo.webp" type="image/webp">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#beranda" aria-label="Iris Bakery, beranda"><img src="assets/images/logo.webp" alt="Logo Iris Bakery" width="64" height="64"></a>
+      <nav aria-label="Navigasi utama"><a href="#katalog">Menu</a><a href="#cara-pesan">Cara pesan</a><a href="#faq">FAQ</a></nav>
+      <a class="cart-link" href="#keranjang"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 8h14l1 12H4L5 8Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg><span>Keranjang</span><span id="cart-count" class="count">0</span></a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero container" id="beranda" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="small-line"></span> PRE-ORDER DESSERT &amp; BAKERY</p>
+        <h1 id="hero-title">Manis yang dibuat<br><span>dengan hati.</span></h1>
+        <p class="hero-description">Salt bread gurih, cookies kenyal, cheesecake lembut, dan minuman segar. Pilih favoritmu, tentukan tanggalnya, lalu ajukan pesanan lewat WhatsApp.</p>
+        <div class="hero-actions"><a class="button" href="#katalog">Lihat menu <span aria-hidden="true">↗</span></a><a class="text-link" href="#cara-pesan">Bagaimana cara pesannya? <span aria-hidden="true">→</span></a></div>
+        <div class="hero-notes"><span><span aria-hidden="true">✓</span> Harga jelas per item</span><span><span aria-hidden="true">✓</span> Ambil di toko atau antar</span><span><span aria-hidden="true">✓</span> Konfirmasi via WhatsApp</span></div>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/images/cafe-interior.webp" alt="Interior kafe Iris Bakery dengan dekorasi pink dan furnitur putih" width="1430" height="1294" fetchpriority="high">
+        <div class="visual-caption"><span class="compass" aria-hidden="true">✿</span><div><strong>Dipesan dulu, dibuat untukmu.</strong><span>Pilih menu, kirim pengajuan, tunggu konfirmasi.</span></div></div>
+      </div>
+    </section>
+    <div class="intro-strip"><div class="container strip-inner"><span class="strip-label">MENU IRIS BAKERY</span><span>20 menu pilihan</span><span>2 kategori: Dessert &amp; Bakery, Drinks</span><span>Estimasi harga transparan</span></div></div>
+    <section class="container catalog-section" id="katalog" aria-labelledby="catalog-heading">
+      <div class="section-heading"><div><p class="eyebrow">PILIH FAVORITMU</p><h2 id="catalog-heading">Menu, siap dipesan.</h2></div><p>Dari roti garam hingga minuman segar.<br>Pilih yang kamu suka, atur jumlahnya.</p></div>
+      <p class="demo-note"><span aria-hidden="true">ⓘ</span> Stok, ongkos kirim, dan pembayaran dikonfirmasi pengelola setelah pengajuan dikirim.</p>
+      <div class="shop-layout">
+        <div class="catalog-content">
+          <div class="catalog-toolbar"><div class="search-wrap"><label class="sr-only" for="search">Cari nama menu</label><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 5 5"/></svg><input id="search" type="search" placeholder="Cari salt bread, cookie, latte…" autocomplete="off"></div><span id="result-count" class="result-count" role="status">20 dari 20 menu</span></div>
+          <div id="category-filters" class="filters" role="group" aria-label="Filter kategori"></div>
+          <div id="product-grid" class="product-grid"></div>
+          <div id="no-results" class="empty-results" hidden><h3>Produk tidak ditemukan.</h3><p>Coba kata lain atau reset filter.</p><button id="reset-filters" class="button secondary" type="button">Reset pencarian &amp; filter</button></div>
+          <noscript><p class="notice">Aktifkan JavaScript untuk melihat 20 menu dan menggunakan keranjang. Pemesanan belum tersedia tanpa JavaScript.</p></noscript>
+        </div>
+        <aside class="cart-panel" id="keranjang" aria-labelledby="cart-heading">
+          <div class="cart-title"><div><p class="eyebrow">PESANANMU</p><h2 id="cart-heading" tabindex="-1">Keranjang</h2></div><span class="cart-symbol" aria-hidden="true">✿</span></div>
+          <p class="subtle">Susun pesananmu. Lihat estimasinya.</p>
+          <div id="cart-empty" class="cart-empty"><svg width="42" height="42" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 17h24l3 25H9l3-25Z"/><path d="M18 19v-8a6 6 0 0 1 12 0v8"/><path d="M19 29h10m-5-5v10"/></svg><p>Keranjangmu masih kosong.</p><span>Pilih menu favoritmu untuk memulai.</span><a href="#product-grid" class="text-link">Lihat menu →</a></div>
+          <div id="cart-items"></div>
+          <form id="order-form" novalidate>
+            <fieldset><legend>Metode</legend><div class="radio-row"><label><input type="radio" name="fulfillment" value="pickup" checked> Ambil di toko</label><label><input type="radio" name="fulfillment" value="delivery"> Antar</label></div></fieldset>
+            <fieldset><legend>Jadwal</legend><div class="field"><label for="order-date">Tanggal pengambilan/pengantaran</label><input id="order-date" type="date" required aria-describedby="date-help order-date-error"><p id="date-help" class="help"></p><p id="order-date-error" class="field-error"></p></div></fieldset>
+            <div class="estimate-box"><div><span>Jumlah</span><strong id="item-count">0 item</strong></div><div class="total-row"><span>Estimasi total</span><strong id="order-total">—</strong></div><p id="estimate-help">Tambahkan menu untuk melihat estimasi.</p></div>
+            <fieldset><legend>Kontak pemesan</legend>
+              <div class="field"><label for="customer-name">Nama lengkap</label><input id="customer-name" type="text" autocomplete="name" maxlength="80" placeholder="Nama kamu" required aria-describedby="customer-name-error"><p id="customer-name-error" class="field-error"></p></div>
+              <div class="field"><label for="customer-phone">Nomor WhatsApp</label><input id="customer-phone" type="tel" autocomplete="tel" placeholder="08… atau 62…" required aria-describedby="phone-help customer-phone-error"><p id="phone-help" class="help">Untuk tindak lanjut pengajuan oleh pengelola.</p><p id="customer-phone-error" class="field-error"></p></div>
+              <div class="field" id="address-field" hidden><label for="customer-address">Alamat pengantaran</label><textarea id="customer-address" rows="3" maxlength="200" aria-describedby="customer-address-error"></textarea><p id="customer-address-error" class="field-error"></p></div>
+              <div class="field"><label for="customer-notes">Catatan (opsional)</label><textarea id="customer-notes" rows="2" maxlength="200" aria-describedby="notes-help customer-notes-error"></textarea><p id="notes-help" class="help">Catatan tidak menjamin permintaan khusus dapat dipenuhi.</p><p id="customer-notes-error" class="field-error"></p></div>
+            </fieldset>
+            <p id="form-error" class="field-error" role="alert"></p>
+            <button id="review-button" class="button full" type="submit">Periksa pesanan <span aria-hidden="true">→</span></button>
+          </form>
+          <section id="review-panel" class="review-panel" hidden aria-labelledby="review-heading"><h3 id="review-heading" tabindex="-1">Periksa pesananmu</h3><dl id="review-contact"></dl><ul id="review-lines"></ul><p class="review-total" id="review-total"></p><button id="edit-request" class="text-link" type="button">← Ubah pesanan</button><p class="help">Nama, nomor kontak, alamat (jika diantar), dan rincian pesanan akan disiapkan di WhatsApp. Periksa kembali lalu tekan kirim untuk meminta konfirmasi stok dan ongkos kirim. Total ini adalah estimasi harga produk; pengajuan belum menjadi pesanan.</p><button id="whatsapp-button" class="button full" type="button">Pesan via WhatsApp ↗</button></section>
+          <p id="unavailable-note" class="availability-note">WhatsApp Web akan terbuka dengan draf pesanan. Pilih kontak Iris Bakery jika nomor toko belum diatur.</p>
+          <p class="cart-footnote">Estimasi belum termasuk ongkos kirim atau biaya lain bila berlaku. Stok dan ketentuan dikonfirmasi pengelola.</p>
+        </aside>
+      </div>
+    </section>
+    <section id="cara-pesan" class="how-section" aria-labelledby="how-heading"><div class="container"><div class="section-heading"><div><p class="eyebrow">SEDERHANA DARI AWAL</p><h2 id="how-heading">Pilih, atur, kirim.</h2></div><p>Tiga langkah untuk memesan<br>dessert dan minuman favoritmu.</p></div><ol class="steps"><li><span class="step-number">01</span><h3>Pilih menu</h3><p>Cari atau filter menu, lalu tambahkan ke keranjang dan atur jumlahnya.</p></li><li><span class="step-number">02</span><h3>Atur jadwal &amp; periksa</h3><p>Pilih ambil atau antar beserta tanggalnya. Periksa ringkasan dan estimasi total.</p></li><li><span class="step-number">03</span><h3>Konfirmasi via WhatsApp</h3><p>Kirim pengajuan. Pengelola mengonfirmasi stok, ongkos kirim, dan pembayaran.</p></li></ol></div></section>
+    <section class="container faq-section" id="faq" aria-labelledby="faq-heading"><div><p class="eyebrow">SEBELUM MEMESAN</p><h2 id="faq-heading">Ada yang ingin<br>kamu tanyakan?</h2><p class="subtle">Beberapa hal yang perlu diketahui<br>sebelum memesan.</p><a class="text-link" href="#kontak">Informasi toko →</a></div><div class="faq-list">
+      <details><summary>Apakah menu di katalog pasti tersedia?</summary><p>Website tidak menampilkan stok real-time. Pengelola perlu mengonfirmasi ketersediaan untuk tanggal yang kamu pilih.</p></details>
+      <details><summary>Apakah pengajuan sudah menjadi pesanan?</summary><p>Belum. Membuka WhatsApp hanya menyiapkan draf pesan. Kirim pesan tersebut dan tunggu konfirmasi pengelola mengenai stok, jadwal, ongkos kirim, dan pembayaran.</p></details>
+      <details><summary>Bagaimana harga dan ongkos kirim dihitung?</summary><p>Total di website adalah estimasi harga produk (harga × jumlah). Ongkos kirim dan biaya tambahan disampaikan pengelola sebelum kamu menyetujui pesanan.</p></details>
+      <details><summary>Bagaimana pembayaran dan pembatalan?</summary><p>Metode pembayaran dan kebijakan pembatalan akan dijelaskan pengelola saat konfirmasi pesanan.</p></details>
+      <details><summary>Bagaimana dengan alergen dan masa simpan?</summary><p>Produk dapat mengandung susu, telur, gluten, kacang, atau bahan lain. Tanyakan informasi alergen dan masa simpan kepada pengelola sebelum memesan.</p></details>
+      <details><summary>Apakah data kontak saya disimpan?</summary><p>Nama, nomor, alamat, dan catatan tidak disimpan oleh website. Keranjang, metode, dan tanggal disimpan di browser ini jika diizinkan. Saat WhatsApp dibuka, data pesanan dimasukkan ke draf pesan pada layanan tersebut.</p></details>
+    </div></section>
+    <section class="container contact-section" id="kontak" aria-labelledby="contact-heading"><div class="contact-mark" aria-hidden="true"><img src="assets/images/logo.webp" alt="" width="96" height="96"></div><div><p class="eyebrow">SAMPAI JUMPA DI IRIS BAKERY</p><h2 id="contact-heading">Siap memilih yang manis?</h2><p id="business-contact">Informasi kontak, lokasi toko, dan jam operasional akan tersedia setelah dikonfirmasi pengelola.</p></div><a class="button light" href="#katalog">Lihat menu <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="container site-footer">
+    <div class="footer-identity"><a class="brand footer-brand" href="#beranda" aria-label="Iris Bakery, beranda"><img src="assets/images/logo.webp" alt="Logo Iris Bakery" width="48" height="48"></a><p>Manis yang dibuat dengan hati.</p></div>
+    <div class="footer-location"><h2>Alamat toko</h2><address id="footer-address">Jl. Asem Dua No.22, RT.11/RW.5, Cipete Selatan, Kecamatan Cilandak, Kota Jakarta Selatan, DKI Jakarta 12410</address></div>
+    <span>© <span id="year">2026</span> Iris Bakery · Harga dan stok dikonfirmasi pengelola</span>
+  </footer>
+  <div id="status-message" class="toast" role="status" aria-live="polite"></div>
+  <p id="storage-warning" class="storage-warning" role="status" hidden>Keranjang dapat digunakan, tetapi belum bisa disimpan pada browser ini.</p>
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

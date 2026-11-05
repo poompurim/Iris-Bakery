@@ -1,0 +1,11 @@
+{
+  "name": "iris-bakery",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Website statis katalog dan pengajuan pesanan Iris Bakery",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "package": "python3 scripts/package_site.py"
+  }
+}
